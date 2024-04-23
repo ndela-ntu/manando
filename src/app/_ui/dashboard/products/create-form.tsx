@@ -36,16 +36,16 @@ export default function CreateForm() {
     >
       <div className="flex flex-col mt-5 rounded-md border border-black p-8">
         <div className="flex flex-col mb-4">
-          <div className="flex items-center justify-center relative">
+          <div className="flex items-center h-80 rounded-sm border border-black justify-center relative">
             {file ? (
               <Image
                 src={URL.createObjectURL(file)}
-                width={250}
-                height={250}
+                width={200}
+                height={200}
                 alt="Image of item"
               />
             ) : (
-              <div className="w-[250px] h-[250px] flex items-center justify-center"></div>
+              <div className="w-[200px] h-[200px] flex items-center justify-center"></div>
             )}
             <input
               type="file"

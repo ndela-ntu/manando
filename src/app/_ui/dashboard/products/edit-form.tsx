@@ -33,7 +33,7 @@ export default function EditForm({ product }: Props) {
   }, [state]);
 
   if (formStatus.pending) {
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1>;
   }
 
   return (
@@ -49,22 +49,13 @@ export default function EditForm({ product }: Props) {
     >
       <div className="flex flex-col mt-5 rounded-md border border-black p-8">
         <div className="flex flex-col mb-4">
-          <div className="flex items-center justify-center relative">
-            {file ? (
-              <Image
-                src={URL.createObjectURL(file)}
-                width={250}
-                height={250}
-                alt="Image of item"
-              />
-            ) : (
-              <Image
-                src={product.image}
-                width={250}
-                height={250}
-                alt="Image of item"
-              />
-            )}
+          <div className="flex items-center h-80 rounded-sm border border-black justify-center relative">
+            <Image
+              src={file ? URL.createObjectURL(file) : product.image}
+              width={200}
+              height={200}
+              alt="Image of item"
+            />
             <input
               type="file"
               id="image"
