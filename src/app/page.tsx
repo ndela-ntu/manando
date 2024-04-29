@@ -1,31 +1,13 @@
-import Link from "next/link";
-import Navbar from "./_ui/store-front/navbar";
-import Header from "./_ui/store-front/header";
+import React from "react";
+import BuyOrSellCard from "./_ui/buy-or-sell-card";
 
-import * as queries from "@/graphql/queries";
-import { generateServerClientUsingCookies } from "@aws-amplify/adapter-nextjs/api";
-import { cookies } from "next/headers";
+type Props = {};
 
-import config from "@/amplifyconfiguration.json";
-import ProductsView from "./_ui/store-front/products-view";
-const cookiesClient = generateServerClientUsingCookies({
-  config,
-  cookies,
-});
-
-export default async function Home() {
-  const { data, errors } = await cookiesClient.graphql({
-    query: queries.listProducts,
-  });
-
-  const products = data.listProducts.items;
-
+export default function Page({}: Props) {
   return (
-    <>
-      <div>
-        <Header />
-        <ProductsView products={products} />
-      </div>
-    </>
+    <div className="flex items-center justify-center space-x-10">
+      <BuyOrSellCard cardType="Buy" />
+      <BuyOrSellCard cardType="Sell" />
+    </div>
   );
 }

@@ -6,7 +6,6 @@ import {
   updateProduct,
 } from "../../graphql/mutations";
 import { v4 as uuidv4 } from "uuid";
-import { listProducts } from "@/graphql/queries";
 
 const client = generateClient();
 

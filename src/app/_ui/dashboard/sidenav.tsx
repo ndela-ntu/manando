@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CiPower } from "react-icons/ci";
 import NavLinks from "./nav-links";
-import ManandoVehicleAppLabel from "../manando-vehicle-app-label";
+import ManandoAutoParts from "../manando-auto-parts";
 import { DOMAttributes, MouseEventHandler } from "react";
 
 export default function SideNav({ onSignout }: {onSignout: MouseEventHandler<HTMLButtonElement> | undefined}) {
@@ -12,7 +12,7 @@ export default function SideNav({ onSignout }: {onSignout: MouseEventHandler<HTM
         href="/"
       >
         <div className="w-32 text-white md:w-40">
-          <ManandoVehicleAppLabel />
+          <ManandoAutoParts />
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">

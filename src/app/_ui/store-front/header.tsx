@@ -1,14 +1,16 @@
 import React from "react";
 import Navbar from "./navbar";
-import ManandoVehicleAppLabel from "../manando-vehicle-app-label";
+import ManandoAutoParts from "../manando-auto-parts";
 
-type Props = {};
+type Props = {
+  hideSignIn?: boolean;
+};
 
-const Header = (props: Props) => {
+const Header = ({ hideSignIn = false }: Props) => {
   return (
-    <header className="flex justify-between items-center p-5">
-      <ManandoVehicleAppLabel />
-      <Navbar />
+    <header className="flex justify-between items-center p-5 text-white bg-blue bg-blue-600 py-2">
+      <ManandoAutoParts />
+      {hideSignIn && <Navbar />}
     </header>
   );
 };

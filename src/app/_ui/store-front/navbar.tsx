@@ -22,15 +22,17 @@ const Navbar = (props: Props) => {
   return (
     <nav className="">
       <ul className="flex justify-end">
-        <li className="px-5">
-          <Link href="">
-            <CartIcon itemCount={5} />
+        <li>
+          <Link href="/storefront/cart">
+            <CartIcon />
           </Link>
         </li>
-        <li className="px-5">
-          <Link href="">Sign In</Link>
+        |
+        <li className="px-2">
+          <Link href="/storefront/account">Sign In</Link>
         </li>
-        <li className="px-5">
+        |
+        <li className="px-2">
           <Link href="/dashboard">Sign in as Admin</Link>
         </li>
       </ul>

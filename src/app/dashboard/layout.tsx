@@ -18,7 +18,7 @@ import "@aws-amplify/ui-react/styles.css";
 
 import config from "@/amplifyconfiguration.json";
 import { Amplify } from "aws-amplify";
-import ManandoVehicleAppLabel from "../_ui/manando-vehicle-app-label";
+import ManandoAutoParts from "../_ui/manando-auto-parts";
 
 Amplify.configure(config);
 
@@ -32,7 +32,7 @@ const components = {
 
     return (
       <View textAlign="center" padding={tokens.space.large}>
-        <ManandoVehicleAppLabel />
+        <ManandoAutoParts />
       </View>
     );
   },

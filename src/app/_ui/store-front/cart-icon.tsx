@@ -1,15 +1,17 @@
-import React from "react";
+import { useAppDispatch, useAppStore, useAppSelector } from "@/app/_lib/redux/hooks";
+import React, { useContext } from "react";
 import { CiShoppingCart } from "react-icons/ci";
 
-type Props = {
-  itemCount: number;
-};
+export default function CartIcon() {
+  const store = useAppStore();
+  const productsInCartIds = useAppSelector(state => state.cart.productsInCart);
+  const dispatch = useAppDispatch();
 
-export default function CartIcon({ itemCount }: Props) {
   return (
     <div className="flex justify-center items-center">
-      <CiShoppingCart size={25}/>
-      <span>{itemCount}</span>
+      <span className="px-2">Cart</span>
+      <CiShoppingCart size={25} />
+      <span>{productsInCartIds.length}</span>
     </div>
   );
 }
