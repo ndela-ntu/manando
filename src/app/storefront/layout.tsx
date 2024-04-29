@@ -13,6 +13,7 @@ export default function Layout({
 }>) {
   return (
     <div>
+      <Header hideSignIn />
       <div>{children}</div>
     </div>
   );
