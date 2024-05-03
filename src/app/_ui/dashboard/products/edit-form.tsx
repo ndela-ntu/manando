@@ -30,7 +30,7 @@ export default function EditForm({ product }: Props) {
       router.push("/dashboard/products");
       router.refresh();
     }
-  }, [state]);
+  }, [router, state]);
 
   if (formStatus.pending) {
     return <h1>Loading...</h1>;

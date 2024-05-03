@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
       state.productsInCart.push(action.payload);
     },
     remove: (state, action: PayloadAction<Product>) => {
-      let index = state.productsInCart.indexOf(action.payload);
+      let index = state.productsInCart.findIndex(product => product.id == action.payload.id);
       state.productsInCart.splice(index, 1);
     },
   },

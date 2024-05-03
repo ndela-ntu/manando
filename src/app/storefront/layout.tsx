@@ -5,6 +5,7 @@ import Header from "../_ui/store-front/header";
 import Link from "next/link";
 import CartIcon from "../_ui/store-front/cart-icon";
 import { Button } from "../_ui/button";
+import "@aws-amplify/ui-react/styles.css";
 
 export default function Layout({
   children,

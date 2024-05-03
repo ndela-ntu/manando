@@ -6,7 +6,7 @@ type Props = {};
 export default function Page({}: Props) {
   return (
     <div className="flex items-center justify-center space-x-10">
-      <BuyOrSellCard cardType="Buy" />
+      <BuyOrSellCard cardType="Shop" />
       <BuyOrSellCard cardType="Sell" />
     </div>
   );

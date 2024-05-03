@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function ProductView({ product }: Props) {
-  const store = useAppStore();
   const productsInCart = useAppSelector(state => state.cart.productsInCart);
   const dispatch = useAppDispatch();
 

@@ -2,22 +2,28 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "./button";
 import Link from "next/link";
+import { TiShoppingCart } from "react-icons/ti";
+import { GiTakeMyMoney } from "react-icons/gi";
 
 type Props = {
-  cardType: "Buy" | "Sell";
+  cardType: "Shop" | "Sell";
 };
 
 export default function BuyOrSellCard({ cardType }: Props) {
   return (
     <div>
-      <Image
-        src="/IMG-20240425-WA0003.jpg"
-        width={350}
-        height={500}
-        alt={`Image of ${cardType === "Buy" ? "buy" : "sell"} icon`}
-      />
-      <Link href={`${cardType === "Buy" ? "/storefront" : "/sell"}`}>
-        <Button className="w-full">{cardType === "Buy" ? "Shop" : "Sell"}</Button>
+      <Link href={`${cardType === "Shop" ? "/storefront" : "/sell"}`}>
+        {cardType === "Shop" ? (
+          <div className="border border-[#cae4f7] rounded-lg bg-sky-100 flex flex-col items-center justify-self-center p-10">
+            <TiShoppingCart size={64} />
+            <span>Shop</span>
+          </div>
+        ) : (
+          <div className="border border-[#cae4f7] rounded-lg bg-sky-100 flex flex-col items-center justify-self-center p-10">
+            <GiTakeMyMoney size={64} />
+            <span>Sell</span>
+          </div>
+        )}
       </Link>
     </div>
   );

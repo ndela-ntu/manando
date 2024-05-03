@@ -22,14 +22,10 @@ const Navbar = (props: Props) => {
   return (
     <nav className="">
       <ul className="flex justify-end">
-        <li>
+        <li className="px-2">
           <Link href="/storefront/cart">
             <CartIcon />
           </Link>
-        </li>
-        |
-        <li className="px-2">
-          <Link href="/storefront/account">Sign In</Link>
         </li>
         |
         <li className="px-2">

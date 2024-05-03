@@ -12,6 +12,7 @@ import {
 import React from "react";
 import Image from "next/image";
 import { MdDelete } from "react-icons/md";
+import { remove } from "@/app/_lib/redux/cartSlice";
 
 type Props = {};
 
@@ -47,7 +48,9 @@ export default function Cart({}: Props) {
                 </TableCell>
                 <TableCell>R{product.price}</TableCell>
                 <TableCell>
-                  <button className="rounded-md border p-2 hover:bg-gray-100">
+                  <button onClick={() => {
+                    dispatch(remove(product));
+                  }} className="rounded-md border p-2 hover:bg-gray-100">
                     <span className="sr-only">Delete</span>
                     <Icon ariaLabel="delete" as={MdDelete} size={10} />
                   </button>
